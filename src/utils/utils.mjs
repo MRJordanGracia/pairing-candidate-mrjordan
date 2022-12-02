@@ -1,3 +1,5 @@
+import CONSTANTS from './constants.mjs';
+
 /**
  * Returns the first letter in a sentence, decapitalized
  * @param {string} text the text
@@ -17,11 +19,17 @@ export const valueToCase = (text) => {
  * @param {array} data with the results
  * @returns {array} - same array with the value to decapitalize with the first letter in lower case
  */
-export const convertValuesToLowerCase = (data, valueToDecapilize) => {
+export const modifyResults = (data, valueToDecapilize) => {
+  const { ENPOINT_URL, LOCALHOST_URL } = CONSTANTS;
+
   return data.reduce((prev, current) => {
     return [
       ...prev,
-      { ...current, [`${valueToDecapilize}`]: valueToCase(current[`${valueToDecapilize}`]) },
+      {
+        ...current,
+        [`${valueToDecapilize}`]: valueToCase(current[`${valueToDecapilize}`]),
+        url: current.url.replace(`${ENPOINT_URL}`, LOCALHOST_URL),
+      },
     ];
   }, []);
 };

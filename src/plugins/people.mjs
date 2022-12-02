@@ -1,5 +1,5 @@
 import { getAllPeople, getPeopleById } from '../services/swapi-api.mjs';
-import { createOptions, convertValuesToLowerCase, isEmpty } from '../utils/utils.mjs';
+import { createOptions, modifyResults, isEmpty } from '../utils/utils.mjs';
 
 export default async function peoplePlugin(fastify) {
   /**
@@ -9,7 +9,7 @@ export default async function peoplePlugin(fastify) {
     const people = await getAllPeople(
       isEmpty(req.query) ? {} : createOptions('searchParams', req.query)
     );
-    return convertValuesToLowerCase(people.results, 'name');
+    return modifyResults(people.results, 'name');
   });
 
   fastify.get('/people/:id', async (req) => {
