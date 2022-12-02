@@ -1,5 +1,5 @@
 const CONSTANTS = {
-  ENPOINT_URL: 'swapi.dev/api',
-  LOCALHOST_URL: 'localhost:3000',
+  ENPOINT_URL: 'https://swapi.dev/api',
+  LOCALHOST_URL: 'http://localhost:3000',
 };
 export default CONSTANTS;
