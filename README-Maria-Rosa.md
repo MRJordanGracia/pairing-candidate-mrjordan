@@ -9,6 +9,8 @@ Regarding the suggested improvements:
 - Capitalizing the `name` of the pokémon: `bulbasur` -> `Bulbasur`. In my case the names of the characters where already in capital letter, what I've done is convert to lower case the first letter of the name.
 - Manage limit and offset query params on the `GET /pokemons` endpoint. In my case the API accepts as query param `search`, in case of the people endpoint is searching by name.
 
+I've created a folder utils with a file with some utils functionalities.
+
 ## Link of interests
 
 - [Swapi api](https://swapi.dev/documentation).
