@@ -28,7 +28,7 @@ export const modifyResults = (data, valueToDecapilize) => {
       {
         ...current,
         [`${valueToDecapilize}`]: valueToCase(current[`${valueToDecapilize}`]),
-        url: current.url.replace(`${ENPOINT_URL}`, LOCALHOST_URL),
+        url: current.url.replace(ENPOINT_URL, LOCALHOST_URL),
       },
     ];
   }, []);
