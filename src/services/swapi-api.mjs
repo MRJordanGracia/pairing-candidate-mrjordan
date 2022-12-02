@@ -1,6 +1,8 @@
 import got from 'got';
+import CONSTANTS from '../utils/constants.mjs';
 
-const apiBaseURL = 'https://swapi.dev/api';
+const { ENPOINT_URL } = CONSTANTS;
+const apiBaseURL = ENPOINT_URL;
 
 const gotInstance = got.extend({ prefixUrl: apiBaseURL });
 
